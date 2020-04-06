@@ -1,0 +1,100 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+        jcenter()
+        
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.4.2'
+        
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        maven { url "https://jitpack.io" }
+        flatDir {
+            dirs 'libs'
+        }
+    }
+}
+
+
+ext {
+    configuration = [
+            appID                   : "com.all_latest_in_android",
+            appVersionCode          : 1,
+            appVersionName          : '1.0',
+            androidMinSdkVersion    : 22,
+            androidTargetSdkVersion : 29,
+            androidCompileSdkVersion: 29,
+            androidBuildToolsVersion: "29.0.0"
+    ]
+
+    libraries = [
+            //glide
+            glideVersion                 : '4.9.0',
+
+            // android design
+            androidSupportVersion        : '29.0.0',
+            priorityJobQueueVersion      : '2.0.1',
+
+            //rxJava-rxAndroid
+            javaxInjectVersion           : '1',
+            rxJavaVersion                : '2.1.4',
+            rxRelayVersion               : '2.0.0',
+            rxBinding                    : '2.0.0',
+            rxAndroidVersion             : '2.1.1',
+
+            //LiveData and Lifecycle android component
+            architectureComponentVersion : '1.1.0',
+
+            //Room
+            roomVersion                  : '1.1.0',
+
+            //retrofit2
+            retrofitVersion              : '2.3.0',
+            retrofitLoggingVersion       : '3.9.0',
+            retrofitRxJava2AdapterVersion: '1.0.0',
+            timberVersion                : '4.7.0',
+
+            // dagger
+            daggerVersion                : '2.21',
+
+            //leak canary
+            leakcanaryVersion            : '1.5.4',
+
+            //butterknife
+            butterKnifeVersion           : '10.0.0',
+
+            //lombok
+            lombokVersion                : '1.16.20',
+
+            //testing libraries
+            jUnitVersion                 : '4.10',
+            testRunnerVersion            : '1.0.2',
+            mockitoVersion               : '2.16.0',
+            dexmakerVersion              : '2.12.1',
+            mockWebServerVersion         : '3.2.0',
+            commonsIOVersion             : '2.4',
+            jetAnnotationVersion         : '15.0',
+            espressoVersion              : '3.0.1',
+
+            //gson
+            gsonVersion                  : '2.8.2',
+
+            //jSoup
+            jSoupVersion                  : '1.10.2',
+    ]
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

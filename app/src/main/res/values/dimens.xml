@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--Text sizes-->
+    <dimen name="sp_12">12sp</dimen>
+    <dimen name="sp_14">14sp</dimen>
+    <dimen name="sp_20">20sp</dimen>
+    <dimen name="sp_29">29sp</dimen>
+
+    <!--Margin sizes-->
+    <dimen name="dp_12">12dp</dimen>
+    <dimen name="dp_16">16dp</dimen>
+    <dimen name="dp_24">24dp</dimen>
+    <dimen name="dp_30">30dp</dimen>
+    <dimen name="dp_42">42dp</dimen>
+    <dimen name="dp_64">64dp</dimen>
+    <dimen name="dp_120">120dp</dimen>
+    <dimen name="dp_4">4dp</dimen>
+    <dimen name="dp_1">1dp</dimen>
+    <dimen name="dp_5">5dp</dimen>
+    <dimen name="dp_200">200dp</dimen>
+    <dimen name="dp_50">50dp</dimen>
+
+</resources>

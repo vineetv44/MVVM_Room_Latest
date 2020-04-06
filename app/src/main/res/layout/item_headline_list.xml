@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="headline"
+            type="com.all_latest_in_android.data.local.entity.HeadlineEntity" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dp_24"
+        app:cardCornerRadius="@dimen/dp_4"
+        app:cardElevation="@dimen/dp_1">
+
+        <RelativeLayout
+            android:id="@+id/relative_layout_bg_image"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_200">
+
+            <ImageView
+                android:id="@+id/image_view_background"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                app:urlToImage="@{headline.urlToImage}" />
+
+            <TextView
+                android:id="@+id/text_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/linear_layout_author"
+                android:layout_marginBottom="@dimen/dp_24"
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:fontFamily="@font/roboto_regular"
+                android:layout_marginStart="@dimen/dp_12"
+                android:text="@{headline.title}"
+                android:textColor="@color/text_color_title"
+                android:textSize="@dimen/sp_20" />
+
+
+            <LinearLayout
+                android:id="@+id/linear_layout_author"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_12"
+                android:layout_marginEnd="@dimen/dp_12"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="@dimen/dp_12"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/titleTxt"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:text="@{headline.author}"
+                    android:textColor="@color/text_color_desc"
+                    android:fontFamily="@font/roboto_bold"
+                    android:textSize="@dimen/sp_12"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/text_view_published_at"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/sp_20"
+                    android:singleLine="true"
+                    android:ellipsize="end"
+                    android:gravity="end"
+                    android:fontFamily="@font/roboto_regular"
+                    app:dateFormat="@{headline.publishedAt}"
+                    android:textColor="@color/text_color_desc"
+                    android:textSize="12sp"
+                    android:textStyle="normal" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+</layout>
